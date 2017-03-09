@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <title>Currency converter</title>
+
+  <script src="js/money.js"></script>
+  <script src="js/currencyConverter.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
+   
+</head>
+
+<body>
+<div class="mainContent">
+<h1>Currency Converter</h1>
+
+  <form name="converter">
+  <div class="firstBlock">
+  <div class="inputDiv">
+  <label>Type in amount and select currency:</label>
+<input type="text" name="dollar" id="InputAmount" onChange="inputChange()" onkeypress="return validateFloatKeyPress(this,event);" placeholder="0.00"/>
+</div>
+<select id="inputSelect" onChange="inputChange()">
+<option>CAD</option>
+<option>USD</option>
+<option>EUR</option>
+</select>
+</div>
+  <div class="firstBlock">
+  <div class="inputDiv">
+<label>Converted amount:</label>
+<input type="text" name="outputAmount" placeholder="0.00" disabled="disabled"/>
+
+</div>
+<select id="outPutSelect" onChange="inputChange()">
+<option value="USD">USD</option>
+<option value="CAD">CAD</option>
+<option value="EUR">EUR</option>
+</select>
+</div>
+</div>
+<div><a href="Disclaimer.html" target="_blank">Disclaimer</a></div>
+</form>
+</div>
+</body>
+
+</html>
