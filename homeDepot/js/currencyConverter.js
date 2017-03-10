@@ -7,7 +7,9 @@ getJSONP('http://api.fixer.io/latest?callback=?', function(data){
 	var demo = function() {
 	  rates = json.rates
   fx.rates = json.rates
-  amount = document.getElementById("InputAmount").value
+ var amount = document.getElementById("InputAmount").value
+  inpAmount = parseFloat(amount).toFixed(2)	
+  document.getElementsByName('inputTextbox')[0].value = inpAmount;
   InputCurr = document.getElementById("inputSelect").value
   outputCurr = document.getElementById("outPutSelect").value
   if(amount === ""){ /* empty value check for input currency amount*/
@@ -68,4 +70,5 @@ function getSelectionStart(o) {
     head.appendChild(script);
 
 }
+
 
