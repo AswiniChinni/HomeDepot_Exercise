@@ -8,8 +8,8 @@ getJSONP('http://api.fixer.io/latest?callback=?', function(data){
 	  rates = json.rates
   fx.rates = json.rates
  var amount = document.getElementById("InputAmount").value
-  inpAmount = parseFloat(amount).toFixed(2)	
-  document.getElementsByName('inputTextbox')[0].value = inpAmount;
+  //inpAmount = parseFloat(amount).toFixed(2)	
+  document.getElementsByName('inputTextbox')[0].value = amount;
   InputCurr = document.getElementById("inputSelect").value
   outputCurr = document.getElementById("outPutSelect").value
   if(amount === ""){ /* empty value check for input currency amount*/
@@ -27,6 +27,7 @@ demo();
    
    /*below function is used to prevent alphabets, special characters in input amount field*/
     function validateFloatKeyPress(el, evt) {
+
     var charCode = (evt.which) ? evt.which : event.keyCode;
     var number = el.value.split('.');
     if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -42,7 +43,8 @@ demo();
     if( caratPos > dotPos && dotPos>-1 && (number[1].length > 1)){
         return false;
     }
-    return true;
+   // return true;
+			inputChange();
 }
 
 function getSelectionStart(o) {
