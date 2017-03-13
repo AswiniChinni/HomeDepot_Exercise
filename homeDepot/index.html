@@ -18,7 +18,7 @@
   <div class="firstBlock">
   <div class="inputDiv">
   <label>Type in amount and select currency:</label>
-<input type="text" name="inputTextbox" id="InputAmount" onkeydown="return validateFloatKeyPress(this,event);" onChange="inputChange();" placeholder="0.00"/>
+<input type="text" name="inputTextbox" id="InputAmount" onkeypress="return validateFloatKeyPress(this,event);" onkeydown="inputChange()" placeholder="0.00"/>
 </div>
 <select id="inputSelect" onChange="inputChange()">
 <option>CAD</option>
