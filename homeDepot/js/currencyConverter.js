@@ -43,8 +43,8 @@ demo();
     if( caratPos > dotPos && dotPos>-1 && (number[1].length > 1)){
         return false;
     }
-   // return true;
-			inputChange();
+   return true;
+			
 }
 
 function getSelectionStart(o) {
