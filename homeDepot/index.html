@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
   <title>Currency converter</title>
-
-  <script src="js/money.js"></script>
-  <script src="js/currencyConverter.js"></script>
+   <script src="js/currencyConverter.js"></script>
    <link rel="stylesheet" type="text/css" href="css/styles.css">
-   
+ 
 </head>
 
 <body>
@@ -18,7 +16,7 @@
   <div class="firstBlock">
   <div class="inputDiv">
   <label>Type in amount and select currency:</label>
-<input type="text" name="inputTextbox" id="InputAmount" onkeypress="return validateFloatKeyPress(this,event);" onkeydown="inputChange()" placeholder="0.00"/>
+<input type="text" name="inputTextbox" id="InputAmount" onkeypress="return validateFloatKeyPress(this,event);" onkeydown="inputChange();" placeholder="0.00"/>
 </div>
 <select id="inputSelect" onChange="inputChange()">
 <option>CAD</option>
