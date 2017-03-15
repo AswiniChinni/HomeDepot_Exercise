@@ -1,22 +1,50 @@
+var currCode = {
+	currCode_CAD : "CAD",
+	currCode_USD : "USD"
+};
+
 /*below function is used convert currency using JSON API*/
    function inputChange(json){
   
 getJSONP('http://api.fixer.io/latest?callback=?', function(data){
    var json = data;
-	
 	var demo = function() {
 	  rates = json.rates
-  fx.rates = json.rates
- var amount = document.getElementById("InputAmount").value
-  //inpAmount = parseFloat(amount).toFixed(2)	
-  document.getElementsByName('inputTextbox')[0].value = amount;
+	var amount = document.getElementById("InputAmount").value
+   document.getElementsByName('inputTextbox')[0].value = amount;
   InputCurr = document.getElementById("inputSelect").value
+  if(InputCurr == currCode.currCode_CAD){
+	  InputCurr = rates.CAD
+	  
+  } else if(InputCurr == currCode.currCode_USD){
+	  InputCurr = rates.USD
+	  
+  } else
+  {
+	   InputCurr = 1
+	  
+  }
+  
   outputCurr = document.getElementById("outPutSelect").value
+  
+  if(outputCurr == currCode.currCode_CAD){
+	  outputCurr = rates.CAD
+	  
+  } else if(outputCurr == currCode.currCode_USD){
+	  outputCurr = rates.USD
+	  
+  } else
+  {
+	   outputCurr = 1
+	  
+  }
   if(amount === ""){ /* empty value check for input currency amount*/
     document.getElementsByName('outputAmount')[0].value = "0.00";
   } else{
-  var rate = fx(amount).from(InputCurr).to(outputCurr)
-  finalAmount = rate.toFixed(2)
+   
+    finalAmount = amount / (InputCurr * (1 / outputCurr));
+               
+  finalAmount = finalAmount.toFixed(2)
   document.getElementsByName('outputAmount')[0].value = finalAmount;
   }
 }
@@ -43,8 +71,8 @@ demo();
     if( caratPos > dotPos && dotPos>-1 && (number[1].length > 1)){
         return false;
     }
-   return true;
-			
+   // return true;
+			inputChange();
 }
 
 function getSelectionStart(o) {
